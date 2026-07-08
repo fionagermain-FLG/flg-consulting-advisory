@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLG Consulting & Advisory | AI Governance, Financial Crime & Risk Transformation</title>
+  <style>
+    :root{
+      --ink:#0B0F19;
+      --graphite:#293241;
+      --muted:#667085;
+      --line:#E6EAF0;
+      --ice:#F6F8FC;
+      --white:#FFFFFF;
+      --electric:#2563EB;
+      --cyan:#06B6D4;
+      --deep:#08111F;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter","IBM Plex Sans","Segoe UI",Arial,sans-serif;
+      color:var(--ink);
+      background:var(--white);
+      line-height:1.55;
+    }
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:22px 8%;
+      border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(14px);
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
+    .brand{
+      font-weight:900;
+      letter-spacing:-.03em;
+      text-transform:uppercase;
+    }
+    .navlinks a{
+      margin-left:24px;
+      color:var(--graphite);
+      text-decoration:none;
+      font-size:14px;
+      font-weight:700;
+    }
+    header{
+      padding:92px 8% 82px;
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:58px;
+      align-items:center;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(37,99,235,.14), transparent 28%),
+        radial-gradient(circle at 82% 12%, rgba(6,182,212,.16), transparent 28%),
+        linear-gradient(180deg,#FFFFFF 0%,#F6F8FC 100%);
+    }
+    .eyebrow{
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      color:var(--electric);
+      margin-bottom:18px;
+    }
+    h1{
+      font-size:60px;
+      line-height:1.02;
+      margin:0 0 24px;
+      letter-spacing:-.06em;
+      max-width:980px;
+    }
+    .hero-copy{
+      font-size:20px;
+      color:var(--graphite);
+      max-width:790px;
+      margin-bottom:28px;
+    }
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.78);
+      padding:9px 13px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:800;
+    }
+    .photo-wrap{
+      position:relative;
+    }
+    .photo-wrap:before{
+      content:"";
+      position:absolute;
+      inset:28px -22px -22px 28px;
+      background:linear-gradient(135deg,var(--electric),var(--cyan));
+      z-index:0;
+    }
+    .photo{
+      position:relative;
+      z-index:1;
+      min-height:520px;
+      border:1px solid var(--line);
+      background:url('flg-professional-photo.jpg') center/cover no-repeat;
+      box-shadow:0 28px 70px rgba(15,23,42,.18);
+    }
+    section{padding:74px 8%}
+    .section-title{
+      max-width:860px;
+      margin-bottom:34px;
+    }
+    h2{
+      font-size:42px;
+      line-height:1.1;
+      letter-spacing:-.045em;
+      margin:0 0 14px;
+    }
+    .lead{font-size:18px;color:var(--graphite)}
+    .logos{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+    }
+    .logo{
+      border-bottom:2px solid var(--line);
+      padding:14px 4px;
+      min-width:135px;
+      font-weight:900;
+      color:var(--graphite);
+      filter:grayscale(1);
+    }
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:26px;
+    }
+    .card{
+      border-top:2px solid var(--electric);
+      padding:30px 0 0;
+      background:transparent;
+    }
+    .card h3{
+      font-size:23px;
+      margin:0 0 14px;
+      letter-spacing:-.03em;
+    }
+    .label{
+      margin-top:20px;
+      margin-bottom:6px;
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:var(--electric);
+    }
+    .metric{
+      font-size:38px;
+      font-weight:950;
+      letter-spacing:-.055em;
+      margin:18px 0 2px;
+      color:var(--deep);
+    }
+    .impact{
+      background:var(--deep);
+      color:var(--white);
+    }
+    .impact h2{color:var(--white)}
+    .impact .lead{color:#CBD5E1}
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:34px 42px;
+      margin-top:38px;
+    }
+    .metric-box{
+      padding:0 0 20px;
+      border-bottom:1px solid rgba(255,255,255,.22);
+    }
+    .metric-box strong{
+      display:block;
+      font-size:44px;
+      letter-spacing:-.06em;
+      margin-bottom:7px;
+      color:#FFFFFF;
+    }
+    .metric-box span{color:#CBD5E1}
+    .credentials{
+      background:var(--ice);
+    }
+    .credential-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:28px 42px;
+      margin-top:20px;
+    }
+    .credential{
+      font-size:18px;
+      font-weight:900;
+      padding-bottom:10px;
+      border-bottom:2px solid var(--electric);
+    }
+    .future{
+      margin-top:34px;
+      border-left:3px solid var(--cyan);
+      padding:8px 0 8px 24px;
+      max-width:930px;
+      background:transparent;
+    }
+    footer{
+      padding:44px 8%;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:18px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    @media(max-width:980px){
+      header{grid-template-columns:1fr}
+      h1{font-size:42px}
+      .grid3,.metrics{grid-template-columns:1fr}
+      .navlinks{display:none}
+      .photo{min-height:430px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">FLG Consulting & Advisory</div>
+  <div class="navlinks">
+    <a href="#advisory">Advisory</a>
+    <a href="#engagements">Engagements</a>
+    <a href="#impact">Impact</a>
+    <a href="#credentials">Credentials</a>
+  </div>
+</nav>
+
+<header>
+  <div>
+    <div class="eyebrow">Enterprise AI Governance | Financial Crime | Risk Transformation</div>
+    <h1>Modernizing compliance, governance, and responsible AI for regulated enterprises.</h1>
+    <p class="hero-copy">
+      FLG Consulting & Advisory partners with executive leaders across Legal, Technology, Operations, Product, Compliance, Risk, and Data to translate complex regulatory expectations into scalable controls, operating models, dashboards, and transformation roadmaps.
+    </p>
+    <div class="meta">
+      <span class="pill">CAMS Certified</span>
+      <span class="pill">CIPM</span>
+      <span class="pill">15+ Years Compliance & Risk Leadership</span>
+      <span class="pill">MIT AI & Digital Transformation — Future State</span>
+    </div>
+  </div>
+
+  <div class="photo-wrap">
+    <div class="photo" aria-label="Professional photo of Fiona Germain"></div>
+  </div>
+</header>
+
+<section id="advisory">
+  <div class="section-title">
+    <h2>Executive Advisory</h2>
+    <p class="lead">
+      A boutique advisory practice focused on high-stakes compliance modernization, responsible AI adoption, financial crime transformation, and regulatory risk execution in complex, highly regulated environments.
+    </p>
+  </div>
+
+  <div class="logos">
+    <div class="logo">JPMorgan</div>
+    <div class="logo">Citi</div>
+    <div class="logo">RBC</div>
+    <div class="logo">TD Bank</div>
+    <div class="logo">Deloitte</div>
+    <div class="logo">HSI</div>
+    <div class="logo">Big Tech</div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Advisory Services</h2>
+    <p class="lead">Focused offerings designed for Chief Compliance Officers, CROs, General Counsel, Technology leaders, and transformation executives.</p>
+  </div>
+
+  <div class="grid3">
+    <div class="card">
+      <h3>Enterprise Risk & Compliance Transformation</h3>
+      <p>Enterprise risk assessments, RCSA frameworks, regulatory remediation, GRC modernization, executive dashboards, and operating model redesign.</p>
+    </div>
+    <div class="card">
+      <h3>AI Strategy & Responsible AI</h3>
+      <p>AI opportunity mapping, governance frameworks, responsible AI controls, privacy and data protection alignment, EU AI Act readiness, and adoption roadmaps.</p>
+    </div>
+    <div class="card">
+      <h3>Financial Crime Transformation</h3>
+      <p>AML, OFAC sanctions, transaction monitoring, financial crime risk assessments, digital assets risk, investigations modernization, and screening optimization.</p>
+    </div>
+  </div>
+</section>
+
+<section id="engagements">
+  <div class="section-title">
+    <h2>Featured Transformation Engagements</h2>
+    <p class="lead">Selected engagements structured through a consulting lens: issue, method, and result.</p>
+  </div>
+
+  <div class="grid3">
+    <div class="card">
+      <h3>AI-Enabled Financial Crime Transformation</h3>
+      <div class="label">Issue</div>
+      <p>Complex investigations required faster detection of sanctions, fraud, and illicit finance patterns across fragmented banking and digital asset data.</p>
+      <div class="label">Method</div>
+      <p>Applied data-driven investigative analysis, workflow modernization, and cross-functional coordination with federal, legal, compliance, and financial institution stakeholders.</p>
+      <div class="label">Result</div>
+      <p>Supported a complex matter spanning 15 U.S. banks and digital currency providers, accelerating investigative analysis and enforcement support.</p>
+      <div class="metric">30%+</div>
+      <p>faster investigations.</p>
+    </div>
+
+    <div class="card">
+      <h3>Enterprise Compliance Modernization</h3>
+      <div class="label">Issue</div>
+      <p>Legacy compliance models created fragmented controls, inconsistent governance, and limited executive visibility across business units.</p>
+      <div class="label">Method</div>
+      <p>Designed risk-based controls, RCSA methodology, executive dashboards, remediation roadmaps, and governance routines aligned to regulatory expectations.</p>
+      <div class="label">Result</div>
+      <p>Strengthened regulatory readiness, improved executive reporting, and enhanced enterprise accountability.</p>
+      <div class="metric">80%</div>
+      <p>reduction in audit findings.</p>
+    </div>
+
+    <div class="card">
+      <h3>Responsible AI Transformation Roadmap</h3>
+      <div class="label">Issue</div>
+      <p>Leadership teams need to scale generative AI while managing bias, privacy, model risk, data protection, and emerging regulatory expectations.</p>
+      <div class="label">Method</div>
+      <p>Defined AI use-case prioritization, responsible AI guardrails, adoption roadmaps, and success metrics tied to growth, cost optimization, and risk reduction.</p>
+      <div class="label">Result</div>
+      <p>Built an AI transformation approach designed to support responsible enterprise adoption and measurable business value.</p>
+      <div class="metric">30–60%</div>
+      <p>manual effort reduction opportunity.</p>
+    </div>
+  </div>
+</section>
+
+<section class="impact" id="impact">
+  <div class="section-title">
+    <h2>Impact at a Glance</h2>
+    <p class="lead">Quantified outcomes across compliance, risk, financial crime, automation, and enterprise transformation.</p>
+  </div>
+
+  <div class="metrics">
+    <div class="metric-box"><strong>$50B+</strong><span>potential regulatory and financial crime exposure mitigated</span></div>
+    <div class="metric-box"><strong>80%</strong><span>reduction in sanctions screening false positives</span></div>
+    <div class="metric-box"><strong>80%</strong><span>reduction in audit findings</span></div>
+    <div class="metric-box"><strong>60%</strong><span>manual effort reduction</span></div>
+    <div class="metric-box"><strong>30%+</strong><span>faster investigations</span></div>
+    <div class="metric-box"><strong>15+</strong><span>financial institutions and providers supported</span></div>
+    <div class="metric-box"><strong>$100B+</strong><span>global financial institution scale supported</span></div>
+    <div class="metric-box"><strong>15+ yrs</strong><span>compliance and risk leadership</span></div>
+  </div>
+</section>
+
+<section class="credentials" id="credentials">
+  <div class="section-title">
+    <h2>Credentials & Future-State AI Capability</h2>
+    <p class="lead">Combining regulatory depth, financial crime expertise, privacy governance, and applied AI transformation strategy.</p>
+  </div>
+
+  <div class="credential-list">
+    <div class="credential">CAMS Certified</div>
+    <div class="credential">CIPM</div>
+    <div class="credential">Certified Scrum Master</div>
+  </div>
+
+  <div class="future">
+    <strong>MIT AI & Digital Transformation — Future State Use</strong>
+    <p>
+      Applying MIT AI and digital transformation capabilities to develop generative AI use-case portfolios, responsible AI operating models, adoption roadmaps, and measurable success metrics tied to revenue growth, cost optimization, operational efficiency, and risk reduction.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Leadership Point of View</h2>
+    <p class="lead">
+      AI should accelerate regulatory compliance without increasing regulatory risk. The goal is responsible adoption: stronger governance, better controls, faster decisions, and measurable enterprise value.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div>© Fiona Germain | FLG Consulting & Advisory</div>
+  <div>AI Governance • Financial Crime • Enterprise Risk Transformation</div>
+</footer>
+
+</body>
+</html>
